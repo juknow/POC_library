@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "/So/Requests")]
+[CreateAssetMenu(menuName = "SO/Requests")]
 public class RequestData : ScriptableObject
 {
     public RequestType requestType;

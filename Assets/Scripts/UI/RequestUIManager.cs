@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RequestUIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static RequestUIManager Instance;
+
+    public GameObject requestPanel;
+    public Text requestText;
+    private Customer currentCustomer;
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowRequest(Customer customer)
     {
-        
+        currentCustomer = customer;
+        requestText.text = customer.requestData.description;
+        requestPanel.SetActive(true);
     }
 }
