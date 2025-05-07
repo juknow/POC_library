@@ -269,8 +269,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8694603564568760664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 5314147705814665925}
   - component: {fileID: 2633814406779762970}
   - component: {fileID: 7693138900955436488}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,6 +495,7 @@ MonoBehaviour:
   requestData: {fileID: 11400000, guid: c9ef00e226c75fe4dbd005595a0ceb94, type: 2}
   isRequestActive: 0
   requiredBookID: -1
+  customerID: 0
   timer: 0
   statusText: {fileID: 1522028766688952875}
   requestTimerSlider: {fileID: 261866291594625727}
@@ -610,7 +611,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.985}
-  m_SizeDelta: {x: 4, y: 2}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &261866291594625727
 MonoBehaviour:
@@ -655,7 +656,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3130553912121759058}
   m_FillRect: {fileID: 4006512162680019634}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 0

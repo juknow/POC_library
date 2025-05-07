@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestType: 2
   description: 
-  timeLimit: 30
+  timeLimit: 22
   satisfactionPenalty: 10

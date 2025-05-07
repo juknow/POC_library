@@ -1,20 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bookshelf : MonoBehaviour
 {
-    public int bookshelfID = 0;
+    public int bookshelfID;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private bool playerInRange = false;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            playerInRange = true;
+            PlayerInventory.Instance.tempBookID = bookshelfID; // ÀÓ½Ã ÀúÀå
+            Debug.Log($"ÇÃ·¹ÀÌ¾î °¨ÁöµÊ, Ã¥Àå {bookshelfID}¹ø ÀÔÀå");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            if (PlayerInventory.Instance.tempBookID == bookshelfID)
+                PlayerInventory.Instance.tempBookID = -1; // ³ª°¡¸é ÃÊ±âÈ­
+            Debug.Log($"ÇÃ·¹ÀÌ¾î ÅðÀå, Ã¥Àå {bookshelfID}¹ø");
+        }
+    }
+
+    private void Update()
+    {
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        {
+            int tempID = PlayerInventory.Instance.tempBookID;
+            if (tempID != -1)
             {
-                Debug.Log("Ã¥ È¹µæ!");
-                PlayerInventory.Instance.HoldBook(bookshelfID);
-                Debug.Log($"Ã¥Àå {bookshelfID}¹ø¿¡¼­ Ã¥À» ²¨³¿");
+                Debug.Log($"Ã¥ {tempID}¹ø È¹µæ!");
+                PlayerInventory.Instance.HoldBook(tempID);
             }
         }
     }

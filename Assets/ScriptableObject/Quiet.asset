@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d3a9f113fae534cb06885dfe4c9e83, type: 3}
   m_Name: Quiet
   m_EditorClassIdentifier: 
-  requestType: 0
+  requestType: 3
   description: 
-  timeLimit: 30
+  timeLimit: 15
   satisfactionPenalty: 10

@@ -15,8 +15,15 @@ public class Desk : MonoBehaviour
                 if (customer != null && customer.isRequestActive &&
                     customer.requestData.requestType == RequestType.ReturnBook)
                 {
-                    Debug.Log($"반납 완료: {customer.gameObject.name}");
-                    customer.CompleteRequest(); // Ready 상태로 전환
+                    int heldID = PlayerInventory.Instance.heldCustomerID;
+
+                    if (heldID == customer.customerID)
+                    {
+                        Debug.Log($"반납 완료: 손님 {heldID}");
+                        customer.CompleteRequest();
+                        PlayerInventory.Instance.RemoveCustomerItem();
+                        break;
+                    }
                 }
             }
         }

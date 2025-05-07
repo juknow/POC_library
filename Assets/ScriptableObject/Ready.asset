@@ -15,4 +15,4 @@ MonoBehaviour:
   requestType: 5
   description: 
   timeLimit: 5
-  satisfactionPenalty: 0
+  satisfactionPenalty: 10
